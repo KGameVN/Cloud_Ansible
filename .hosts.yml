@@ -1,0 +1,12 @@
+all:
+  vars:
+    ansible_network_os: cisco.ios.ios
+    ansible_connection: network_cli
+  hosts:
+    cisco_router:
+        ansible_host: 192.168.1.7
+        ansible_user: adnet
+        ansible_password: isp@admin333
+        ansible_become: yes
+        ansible_become_method: enable
+        ansible_become_password: ispup

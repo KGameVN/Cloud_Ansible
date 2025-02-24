@@ -1,0 +1,12 @@
+{
+    "result": [
+        "Interface                  IP-Address      OK? Method Status                Protocol",
+        "Ethernet0/0                unassigned      YES NVRAM  up                    up      ",
+        "Ethernet0/0.1              6.6.6.1         YES NVRAM  up                    up      ",
+        "Ethernet0/1                192.168.1.199   YES NVRAM  administratively down down    ",
+        "Ethernet0/2                unassigned      YES DHCP   administratively down down    ",
+        "Ethernet0/3                192.168.1.7     YES DHCP   up                    up      ",
+        "NVI0                       unassigned      YES unset  up                    up"
+    ],
+    "status": false
+}

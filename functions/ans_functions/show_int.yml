@@ -1,0 +1,16 @@
+- name: Get Interface Information from Cisco Router
+  hosts: cisco_router
+  gather_facts: no
+  tasks:
+    - name: Run "show ip interface brief"
+      cisco.ios.ios_command:
+        commands: sh ip int br
+      register: cli_result
+
+    - name: Save stdout_lines to JSON file
+      copy:
+        content: "{{ 
+        {'result':cli_result.stdout_lines[0] , 'status':cli_result.changed} 
+        | to_nice_json }}"
+        dest: "./output/show_int.json"
+
