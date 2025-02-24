@@ -1,0 +1,16 @@
+all:
+  vars:
+      ansible_connection: ssh
+      ansible_user:
+  children:
+    cisco_routers:
+      vars:
+        ansible_network_os: cisco.ios.ios
+        ansible_connection: network_cli
+      hosts:
+        cisco_router:
+          ansible_host: 192.168.1.150
+          ansible_user: adnet
+          ansible_password: isp@admmin333
+  
+    

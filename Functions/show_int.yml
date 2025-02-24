@@ -1,0 +1,21 @@
+- name: Get Interface Information from Cisco Router
+  hosts: all
+  gather_facts: no
+  tasks:
+    - name: Run "show ip interface brief"
+      cisco.ios.ios_command:
+        commands: sh ip int br
+      register: interface_brief
+
+    - name: Display Interface Brief Output
+      debug:
+        var: interface_brief.stdout_lines
+
+    - name: Run "show interfaces"
+      cisco.ios.ios_command:
+        commands: show interfaces
+      register: interface_details
+
+    - name: Display Interface Details Output
+      debug:
+        var: interface_details.stdout_lines
